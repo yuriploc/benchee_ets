@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <title>Benchee Report</title>
+  <meta charset="utf-8">
+  <meta http-equiv="content-type" content="text/html; charset=utf8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+    <link rel="stylesheet" type="text/css" href="assets/stylesheets/benchee.css">
+    <link rel="stylesheet" type="text/css" href="assets/fontello/css/fontello.css">
+  
+</head>
+
+  <body>
+
+    <div class="header">
+  <h1>benchee report</h1>
+  
+
+  <span class="version-note">
+  <a href="javascript:toggleSystemDataInfo();" title="Click to toggle system info">System info</a>
+</span>
+
+</div>
+
+
+    <article id="system-info" class="benchee-systeminfo" >
+  <h3>System info</h3>
+  <ul class="benchee-systeminfo-list">
+    <li>Elixir: 1.13.4</li>
+    <li>Erlang: 25.0.2</li>
+    <li>Operating system: Linux</li>
+    <li>Available memory: 15.25 GB</li>
+    <li>CPU Information: Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz</li>
+    <li>Number of Available Cores: 8</li>
+  </ul>
+</article>
+
+
+    
+      <article>
+        <h2>
+          <a name="run_time" href="#run_time">select Run Time</a>
+          <a href="https://github.com/PragTob/benchee_html/wiki/Chart-Types#individual">
+            <i
+              class="benchee-help-icon icon-question-circle-o"
+              title="Graphs showing the individual run time distribution for select.
+  Run Times Histogram shows the distribution of occurrences of specific run times in buckets.
+  Raw Run Times shows all individual recorded run times in the order they were recorded in."
+            ></i>
+          </a>
+        </h2>
+
+        <section>
+          <table>
+  <thead>
+    <tr>
+      <th class="text-left">Name</th>
+      
+        <th>Iterations per Second</th>
+      
+      <th>Average</th>
+      <th>Deviation</th>
+      <th>Median</th>
+      <th>Mode</th>
+      <th>Minimum</th>
+      <th>Maximum</th>
+      <th>Sample size</th>
+    </tr>
+  </thead>
+  <tbody>
+    
+      
+      <tr>
+        
+          <td class="text-left">select</td>
+        
+        
+          <td>55.54</td>
+          <td>18.00 ms</td>
+          <td>±12.92%</td>
+          <td>18.89 ms</td>
+          <td>none</td>
+          <td>14.18 ms</td>
+          <td>23.81 ms</td>
+        
+        <td>278</td>
+      </tr>
+    
+  </tbody>
+</table>
+
+        </section>
+
+        <section class="benchee-plot-container">
+          <div id="run-times-histogram" class="plot"></div>
+        </section>
+        <section class="benchee-plot-container">
+          <div id="raw-run-times" class="plot"></div>
+        </section>
+      </article>
+    
+
+    
+
+    <footer>
+      <a href="https://github.com/PragTob/benchee" target="blank">benchee version: 1.1.0 </a>
+<br/>
+<a href="https://github.com/PragTob/benchee_html" target="blank">benchee_html version: 1.0.0</a>
+
+
+    </footer>
+
+    
+  <script src="assets/javascripts/plotly-1.30.1.min.js"></script>
+  <script src="assets/javascripts/benchee.js"></script>
+
+
+
+    <script>
+      var scenario = {"name":"select","job_name":"select","input_name":"__no_input","run_time_data":{"statistics":{"absolute_difference":4200889.475157063,"average":18004625.676258992,"ips":55.54128244491115,"maximum":23807854,"median":18894715.0,"minimum":14180904,"mode":null,"percentiles":{"50":18894715.0,"99":23195756.649999995},"relative_less":0.766677211140447,"relative_more":1.3043298867752713,"sample_size":278,"std_dev":2325779.059383003,"std_dev_ips":7.174642448245085,"std_dev_ratio":0.12917675164165113},"samples":[23394335,21770852,22035997,20362969,20047602,20151035,21697275,20410406,19657560,19728103,20339540,20054793,20321288,19938147,19622334,19317434,20027406,20495344,19327388,18835513,18706077,18210855,18795774,18551253,18795778,20616853,19128380,18870934,18893883,19316133,16361431,17092329,17692658,20572944,20080439,19777199,19707765,19166111,20453963,19289278,19792735,19764411,20130451,20221861,20319610,20243794,20084311,20147654,19660424,19852585,19807528,19894348,19641542,19925944,18788996,18981843,19437001,19697873,19426000,19554908,19294507,19110228,19215691,18943428,19384120,19401830,19146533,19255720,19507682,19092233,19048225,19299417,19565089,19425258,19478140,18860817,18625042,18706206,18918796,18755967,18543744,19212645,18591793,19176287,19741352,19633610,19790422,19314485,19623815,18972951,18807891,18991419,18985380,18936199,19091606,18692783,19464152,19170360,19224916,18834423,18895547,19076109,19169231,18878457,19432294,21326011,20550030,19609196,19686301,19950796,20026378,20761055,19343127,19323923,19573211,19534417,19376582,19016512,18678983,18910982,20637246,20018058,19681744,16681340,16139731,15413356,15544682,16546491,18076403,19476224,17236103,18183668,19548723,19671498,18616520,20247371,22567368,23142970,21639123,23807854,23119886,16098942,16188637,19238797,20343388,20524479,20408805,20484955,20450533,20276925,20319784,20238841,20486101,20003198,19860274,20474003,19756682,21504108,19830417,20306787,21481592,22823788,20259625,22289560,22563323,20011233,19147693,19703563,19151111,19939583,20269430,20128997,19535670,18753929,17995635,17269695,16662907,16959665,16507318,15505818,15387760,15209993,14679835,15396538,15985574,15819551,15002828,15349876,15483890,14834935,15282835,15229866,15247827,16565388,16820115,15564128,16186932,15445893,15952230,15136715,15601304,15017324,15263296,15371141,15220271,15241105,15033983,15093411,16077417,14905334,15335306,14932998,15598108,15278001,15840983,15124995,15012693,15134236,14862998,15541834,15510483,15601052,15179808,15670329,15405375,15205660,15267841,15069321,15675623,15255946,15758217,15061981,15587658,16102347,16687216,15131724,14389179,14855298,14180904,14360910,14234618,16010446,15685114,14662126,14709644,14440193,14254280,14796074,15398386,15781550,15087420,15087808,15337628,15011618,15442879,14859921,14974465,15218830,14809668,15491671,14850700,15025641,15166966,14982550,15378261,15046103,15328413,14985641,15118966,15264922,14977985,15193863,14706339,15778172,15212623,14972918,15220291,15059295]},"memory_usage_data":{"statistics":{"absolute_difference":null,"average":null,"ips":null,"maximum":null,"median":null,"minimum":null,"mode":null,"percentiles":null,"relative_less":null,"relative_more":null,"sample_size":0,"std_dev":null,"std_dev_ips":null,"std_dev_ratio":null},"samples":[]},"tag":null};
+
+      var inputHeadline = ""
+
+      
+        drawRunTimeHistogram(scenario, inputHeadline);
+        drawRawRunTimeChart(scenario, inputHeadline);
+      
+
+      
+    </script>
+  </body>
+</html>
